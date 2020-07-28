@@ -25,7 +25,7 @@ const getPokemon = async (id: number): Promise<void> => {
     id: pokemon.id,
     name: pokemon.name,
     image: `${pokemon.sprites.front_default}`,
-    type: pokemonType
+    type: pokemonType,
   };
 
   showPokemon(transformedPokemon);
@@ -33,7 +33,7 @@ const getPokemon = async (id: number): Promise<void> => {
 
 const showPokemon = (pokemon: IPokemon): void => {
   let output: string = `
-        <div class="card">
+        <div class="card" onclick="selectPokemon(this)">
             <span class="card--id">#${pokemon.id}</span>
             <img class="card--image" src=${pokemon.image} alt=${pokemon.name} />
             <h1 class="card--name">${pokemon.name}</h1>
@@ -41,6 +41,12 @@ const showPokemon = (pokemon: IPokemon): void => {
         </div>
     `;
   container.innerHTML += output;
+};
+
+const selectPokemon = (element: HTMLElement): void => {
+  element.classList.contains("selected")
+    ? element.classList.remove("selected")
+    : element.classList.add("selected");
 };
 
 fetchData();
