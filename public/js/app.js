@@ -36,12 +36,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var container = document.getElementById("app");
+var filter = document.getElementById("filter");
 var pokemons = 100;
 var fetchData = function () {
     for (var i = 1; i <= pokemons; i++) {
         getPokemon(i);
     }
 };
+var filterPokemon = function () {
+    var hidden = document.querySelectorAll(".hidden");
+    for (var i = 0; i < hidden.length; i++) {
+        var hiddenElement = hidden[i];
+        hiddenElement.classList.remove("hidden");
+    }
+    switch (filter.selectedOptions[0].value) {
+        case "owned": {
+            var selected = document.querySelectorAll(".selected");
+            for (var i = 0; i < selected.length; i++) {
+                var select = selected[i];
+                select.classList.add("hidden");
+            }
+            break;
+        }
+        case "missing": {
+            var selected = document.querySelectorAll("div.card:not(.selected)");
+            for (var i = 0; i < selected.length; i++) {
+                var select = selected[i];
+                select.classList.add("hidden");
+            }
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+};
+filter.onchange = filterPokemon;
 var getPokemon = function (id) { return __awaiter(void 0, void 0, void 0, function () {
     var data, pokemon, pokemonType, transformedPokemon;
     return __generator(this, function (_a) {

@@ -1,4 +1,5 @@
 const container: HTMLElement | any = document.getElementById("app");
+const filter: HTMLSelectElement | any = document.getElementById("filter");
 const pokemons: number = 100;
 
 interface IPokemon {
@@ -13,6 +14,40 @@ const fetchData = (): void => {
     getPokemon(i);
   }
 };
+
+const filterPokemon = (): void => {
+  const hidden = document.querySelectorAll(".hidden");
+
+  for (let i = 0; i < hidden.length; i++) {
+    const hiddenElement = hidden[i] as HTMLElement;
+    hiddenElement.classList.remove("hidden");
+  }
+
+  switch (filter.selectedOptions[0].value) {
+    case "owned": {
+      const selected = document.querySelectorAll(".selected");
+
+      for (let i = 0; i < selected.length; i++) {
+        const select = selected[i] as HTMLElement;
+        select.classList.add("hidden");
+      }
+      break;
+    }
+    case "missing": {
+      const selected = document.querySelectorAll("div.card:not(.selected)");
+      for (let i = 0; i < selected.length; i++) {
+        const select = selected[i] as HTMLElement;
+        select.classList.add("hidden");
+      }
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+};
+
+filter.onchange = filterPokemon;
 
 const getPokemon = async (id: number): Promise<void> => {
   const data: Response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);

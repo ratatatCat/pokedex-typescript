@@ -26,6 +26,19 @@ main > h1 {
   text-transform: uppercase;
 }
 
+main > select {
+  border-radius: 10px;
+  width: 150px;
+  font-family: "Caveat", cursive;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #cebf7b;
+  background: #333;
+  border-top: 0.5px dotted #cebf7b;
+  border-bottom: 0.5px dotted #cebf7b;
+}
+
 #app {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -85,4 +98,8 @@ main > h1 {
 
 .selected {
   background: rgb(101, 167, 163);
+}
+
+.hidden {
+  display: none;
 }

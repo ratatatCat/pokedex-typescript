@@ -6,14 +6,22 @@ In this guide, I will lead you through TypeScript by learning first all the basi
 
 [Read the complete article](https://www.ibrahima-ndaw.com/blog/a-practical-guide-to-typescript)
 
--   [What is TypeScript?](#what-is-typescript)
--   [Setting up TypeScript](#setting-up-typescript)
--   [Configuring TypeScript with tsconfig](#configuring-typescript-with-tsconfig)
--   [TypeScript Types](#typescript-types)
-    -   [Basic TypeScript Types](#basic-typescript-types)
-    -   [Interfaces and Type aliases](#interfaces-and-type-aliases)
--   [Build a Pokedex app using TypeScript](#build-a-pokedex-app-using-typescript)
-    -   [Markup](#markup)
-    -   [Fetch and display data using TypeScript](#fetch-and-display-data-using-typescript)
--   [Compile TypeScript to JavaScript](#compile-typescript-to-javascript)
--   [Resources](#resources)
+- [What is TypeScript?](#what-is-typescript)
+- [Setting up TypeScript](#setting-up-typescript)
+- [Configuring TypeScript with tsconfig](#configuring-typescript-with-tsconfig)
+- [TypeScript Types](#typescript-types)
+  - [Basic TypeScript Types](#basic-typescript-types)
+  - [Interfaces and Type aliases](#interfaces-and-type-aliases)
+- [Build a Pokedex app using TypeScript](#build-a-pokedex-app-using-typescript)
+  - [Markup](#markup)
+  - [Fetch and display data using TypeScript](#fetch-and-display-data-using-typescript)
+- [Compile TypeScript to JavaScript](#compile-typescript-to-javascript)
+- [Resources](#resources)
+
+Initialize
+<br>
+<code> tsc --init</code>
+<br>
+<code> tsc</code>
+<br>
+<code> tsc -w</code>
