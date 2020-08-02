@@ -25,8 +25,7 @@ const filterPokemon = (): void => {
 
   switch (filter.selectedOptions[0].value) {
     case "owned": {
-      const selected = document.querySelectorAll(".selected");
-
+      const selected = document.querySelectorAll("div.card:not(.selected)");
       for (let i = 0; i < selected.length; i++) {
         const select = selected[i] as HTMLElement;
         select.classList.add("hidden");
@@ -34,7 +33,8 @@ const filterPokemon = (): void => {
       break;
     }
     case "missing": {
-      const selected = document.querySelectorAll("div.card:not(.selected)");
+      const selected = document.querySelectorAll(".selected");
+
       for (let i = 0; i < selected.length; i++) {
         const select = selected[i] as HTMLElement;
         select.classList.add("hidden");

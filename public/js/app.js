@@ -51,7 +51,7 @@ var filterPokemon = function () {
     }
     switch (filter.selectedOptions[0].value) {
         case "owned": {
-            var selected = document.querySelectorAll(".selected");
+            var selected = document.querySelectorAll("div.card:not(.selected)");
             for (var i = 0; i < selected.length; i++) {
                 var select = selected[i];
                 select.classList.add("hidden");
@@ -59,7 +59,7 @@ var filterPokemon = function () {
             break;
         }
         case "missing": {
-            var selected = document.querySelectorAll("div.card:not(.selected)");
+            var selected = document.querySelectorAll(".selected");
             for (var i = 0; i < selected.length; i++) {
                 var select = selected[i];
                 select.classList.add("hidden");
